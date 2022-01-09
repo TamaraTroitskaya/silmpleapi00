@@ -11,9 +11,7 @@ env:
     - secure: "mS6NfsTWfQwhPxpkyE5gNe8VyxUnpT2WR9Su+Hz6f1OVk4mxlKkT1YCdMJNe65TC7tejtjxABCynvgKZ1lwt4yGWqtvwWSE0MFjyizDotVARUePtR0Q1YKK0GoGxFAX/BxRgymqqhC4owmkXa1XEOhBwTul+mBmNYKeRN21okp9gBa0paX29Llay4t1dac0EfZfRO/LVm+Q4qsK2sztJTrN+I6plTBGqxICpjcJ7SiGR2MpdC1A4WUNKZkoHy3JQBRCt7Lt5W9YDA5UArUfQBfWUD//OMVHODWaX41t6T6vCObbOhDCh4VG+V/FL9HZuEYQyAD1QPKRVpxs0IQd8vcm25C2q6uFJdbQxyJMGML03XTsSK3FklwMjDF7qzgluaTl+a9WdMpbz21jbhxWYGgA7bRW73c32fAjBifwsW9Z7AeWo+0Yfu5lOvao0QVfjXdLDT732ji0J7LCad7OGt1XJUbTsV0eE6oDZbyAToJ2Dz3HzvvIAJ0eYJOUDVUELJxw+GxDujFrXvQWB3R31fatD6oUJ5zmuGtn0fAyXRHAbkUSrVRpHHDppdAE37JkoCDBxRuZDV8GBk7u7H3+cOKeIjAtPk2MqymGQ4DUSxkYlNUtN9YSrtP24iuopdGo6RT8OBAgn22iygrcT7zHa5Cuh7EixvX7b8TT2BWUBvJk="
     - COMMIT=${TRAVIS_COMMIT::7}
 
-install:
-  - mvn -N io.takari:maven:wrapper
-  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 
 script:
   - ./mvnw clean install -B
@@ -31,5 +29,7 @@ deploy:
   api_key: $HEROKU_API_KEY
   app: simpleapimtuci
 
-
+install:
+  - mvn -N io.takari:maven:wrapper
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
