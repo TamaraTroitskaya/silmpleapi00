@@ -13,7 +13,7 @@ env:
 
 install:
   - mvn -N io.takari:maven:wrapper
-  - ./mvnw install -DskipTests=tre -Dmaven.javadoc.skip=true -B -V
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 script:
   - ./mvnw clean install -B
