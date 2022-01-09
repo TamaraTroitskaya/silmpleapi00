@@ -29,7 +29,5 @@ deploy:
   api_key: $HEROKU_API_KEY
   app: simpleapimtuci
 
-install:
-  - mvn -N io.takari:maven:wrapper
-  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+
 
